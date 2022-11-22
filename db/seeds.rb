@@ -5,3 +5,32 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# db/seeds.rb
+
+puts "Cleaning database"
+User.destroy_all
+
+puts "Creating users..."
+aurelie = { first_name: "Aurélie", last_name: "Becques", email: "aurelie@me.com", password: "12345" }
+rodolphe = { first_name: "Rodolphe", last_name: "Junker", email: "rodolphe@me.com", password: "12345" }
+matthieu = { first_name: "Matthieu", last_name: "Nourry", email: "matthieu@me.com", password: "12345" }
+corinne = { first_name: "Corinne", last_name: "Poree", email: "corinne@me.com", password: "12345" }
+
+puts "Creating chairs..."
+
+
+
+
+# puts "Cleaning database..."
+# Restaurant.destroy_all
+
+# puts "Creating restaurants..."
+# dishoom = {name: "Dishoom", address: "7 Boundary St, London E2 7JE", rating: 5}
+# pizza_east =  {name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", rating: 4}
+
+# [dishoom, pizza_east].each do |attributes|
+#   restaurant = Restaurant.create!(attributes)
+#   puts "Created #{restaurant.name}"
+# end
+# puts "Finished!"
