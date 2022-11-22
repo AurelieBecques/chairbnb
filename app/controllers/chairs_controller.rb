@@ -1,24 +1,20 @@
 class ChairsController < ApplicationController
-  before_action :set_chair, only: %i[new create]
 
   def new
-    @chair = Chair.find(params[:chair_id])
     @chair = Chair.new
   end
 
   def create
     @chair = Chair.new(chair_params)
+    @chair.rating = 0
+    @chair.user = current_user
     @chair.save
     redirect_to chair_path(@chair)
   end
 
   private
 
-  # def set_chair
-  #   @chair = Chair.find(params[:chair_id])
-  # end
-
   def chair_params
-    params.require(:chair).permit(:title, :description, :address,:price_per_day, :user_id)
+    params.require(:chair).permit(:name, :description, :address, :price_per_day, :photo)
   end
 end
