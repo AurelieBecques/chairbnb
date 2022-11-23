@@ -46,6 +46,7 @@ chair_hip = Chair.new(name: "hipster",
                   and restaurant space.
                   It will also fit elegantly into any modern setting and add style and structure to any contemporary space.",
                   address: "Place de la Montagne, 56100 Lorient",
+                  rating: 3,
                   price_per_day: 30)
 chair_hip.photo.attach(io: file, filename: "hipster.png", content_type: "image/png")
 chair_hip.save!
@@ -55,6 +56,7 @@ chair_pool = Chair.new(name: "pool",
                   user: aurelie,
                   description: "Ce superbe combo vous permettra de siroter un cocktail avec votre buddy les pieds dans l'eau",
                   address: "Pool du Mabilais, 2 rue du Mabilais, 35000 Rennes",
+                  rating: 4,
                   price_per_day: 30)
 chair_pool.photo.attach(io: file, filename: "pool.png", content_type: "image/png")
 chair_pool.save!
@@ -62,22 +64,24 @@ chair_pool.save!
 file = File.open("db/fixtures/images/petasse.jpg")
 chair_rodolphe = Chair.new(name: "petasse",
                   user: rodolphe,
-                  price_per_day: 350,
                   description: "Cette élégante chaise (jeune femme sensuelle en option sur demande)
                    à la mode sera accueillir confortablement vos grosses fesses. Chaise de couleur noire
                   (et si ça vous intéresse la fille est vêtue d'une veste en cuir de style hipster
                      avec des lunettes de soleil). Les pieds sont en bois.",
-                  address: "11 rue Jules Verne, 95600 EAUBONNE")
+                  address: "11 rue Jules Verne, 95600 EAUBONNE",
+                  rating: 5,
+                  price_per_day: 350)
 chair_rodolphe.photo.attach(io: file, filename: "petasse.jpg", content_type: "image/jpg")
 chair_rodolphe.save!
 
 file = File.open("db/fixtures/images/western.png")
 chair_western = Chair.new(name: "western",
                   user: corinne,
-                  price_per_day: 150,
                   description: "Create a cozy and comfortable seating arrangement with our Western Rocking Chair.
                   This traditional styled chair looks great with any of our western or lodge décor",
-                  address: "2 rue du Tigre, 57360 Hagondange")
+                  address: "2 rue du Tigre, 57360 Hagondange",
+                  rating: 2,
+                  price_per_day: 150)
 chair_western.photo.attach(io: file, filename: "western.png", content_type: "image/png")
 chair_western.save!
 # article = Article.new(title: "NES", body: "A great console")

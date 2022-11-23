@@ -1,13 +1,16 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
-  position: fixed;
   width: 100%;
+  background-color: #2E4053;
+  border: 3px solid #283747;
+  font-weight: bolder;
+
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  color: white;
+  color: black;
 }
 
 .nav-link {
@@ -18,4 +21,20 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.notice {
+  text-align: center;
+  background-color: #2E4053;
+  color:white;
+}
+
+.chairbnb {
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 25px;
+  color: white;
 }
