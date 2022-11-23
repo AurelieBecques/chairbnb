@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
   private
 
   def end_time_cannot_be_in_the_past
-    if end_time < start_time
+    if end_time && start_time && end_time < start_time
       errors.add(:end_time, "can't be before start time")
     end
   end
