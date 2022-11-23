@@ -1,0 +1,25 @@
+<div> <h1>"Toutes les réservations que j'ai"</h1></div>
+</div>
+<% @bookings.each do |booking| %>
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%=  booking.chair.name  %></h2>
+    <p><li><%= booking.start_time %></li>
+    <li><%= booking.end_time %></li>
+    <li><%= booking.total_price %></li>
+    <li><%= booking.status %></li>
+    </p>
+
+  </div>
+  <% end %>
+</div>
+<br><br>
+
+
+
+
+
+
+
+<div>
