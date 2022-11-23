@@ -1,0 +1,18 @@
+
+<h2 class="titre-reservation">Yours reservation :</h2>
+
+ <% @bookings.each do |booking| %>
+<div class="card-reservation">
+  <img src="" />
+  <div class="card-reservation-infos">
+    <h2>  <li>Your Chairs : <%= booking.chair.name %></li></h2>
+    <p>
+      <div class="reservation">
+        Total Price : <%= booking.total_price %>$
+        Reservation confirm : <%= booking.status %><br>
+        Date reservation : <%= booking.start_time %> -- <%= booking.end_time %>
+      </div>
+    </p>
+  </div>
+</div>
+  <% end %>
