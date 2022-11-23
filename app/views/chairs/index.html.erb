@@ -1,0 +1,28 @@
+<div class="index-title" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1554752191-b9e763720f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2946&q=80);">
+  <div class="container">
+    <h1 style="color: white;">Les chaises disponibles</h1>
+    <p style="color: grey; text-align: center">Chaise longue, Rockingchair, chaise de camping... Louez votre chaise de rêve près de chez vous !</p>
+  </div>
+</div>
+
+<div class="row">
+  <ul class="col-6 d-flex flex-column">
+    <% @chairs.each do |chair| %>
+      <div class="card-trip my-4 rounded">
+        <%= cl_image_tag(chair.photo.key) %>
+        <div class="card-trip-infos">
+          <div class="style-card">
+            <h2><%= link_to "#{chair.name}", chair_path(chair)%></h2>
+            <p><%= chair.description %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= chair.price_per_day %>€</h2>
+          <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-trip-user avatar-bordered") %>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+
+  <div class="col-6 my-4">
+    <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=48.11178&lon=-1.68026&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" alt="">
+  </div>
+</div>

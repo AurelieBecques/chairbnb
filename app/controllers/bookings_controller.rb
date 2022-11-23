@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_chair, only: %i[create]
 
+  def index
+    @bookings = current_user.bookings
+  end
+  
   def create
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
