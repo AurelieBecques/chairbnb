@@ -25,8 +25,8 @@
       <div class="form">
         <h2>Réserver</h2>
           <%= simple_form_for [@chair, @booking] do |f| %>
-          <%= f.input :start_time, html5: true %>
-          <%= f.input :end_time, html5: true %>
+          <%= f.input :start_time, as: :date, html5: true %>
+          <%= f.input :end_time, as: :date, html5: true %>
           <%= f.submit "Submit reservation", class: "btn btn-primary w-100" %>
         <% end %>
       </div>
