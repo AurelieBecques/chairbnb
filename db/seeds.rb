@@ -21,15 +21,15 @@ aurelie.photo.attach(io: file, filename: "aurelie_avatar.jpg", content_type: "im
 aurelie.save!
 file = File.open("db/fixtures/images/rodolphe_avatar.jpg")
 rodolphe = User.new(first_name: "Rodolphe", last_name: "Junker", email: "rodolphe@me.com", password: "123456")
-aurelie.photo.attach(io: file, filename: "rodolphe_avatar.jpg", content_type: "image/jpg")
+rodolphe.photo.attach(io: file, filename: "rodolphe_avatar.jpg", content_type: "image/jpg")
 rodolphe.save!
 file = File.open("db/fixtures/images/matthieu_avatar.jpg")
 matthieu = User.new(first_name: "Matthieu", last_name: "Nourry", email: "matthieu@me.com", password: "123456")
-aurelie.photo.attach(io: file, filename: "matthieu_avatar.jpg", content_type: "image/jpg")
+matthieu.photo.attach(io: file, filename: "matthieu_avatar.jpg", content_type: "image/jpg")
 matthieu.save!
 file = File.open("db/fixtures/images/corinne_avatar.jpg")
 corinne = User.new(first_name: "Corinne", last_name: "Poree", email: "corinne@me.com", password: "123456")
-aurelie.photo.attach(io: file, filename: "corinne_avatar.jpg", content_type: "image/jpg")
+corinne.photo.attach(io: file, filename: "corinne_avatar.jpg", content_type: "image/jpg")
 corinne.save!
 
 puts "Creating chairs..."
