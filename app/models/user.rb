@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :bookings # LOCATAIRE*
 
   validates :first_name, :last_name, presence: true
+  validates :photo, presence: true
 
   has_one_attached :photo
 end
