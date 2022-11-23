@@ -1,0 +1,37 @@
+
+<div class="flex-container px-5">
+  <div >
+    <div class="d-flex flex-1 align-items-center justify-content-around">
+      <div class="w-50">
+        <h2><%= @chair.name %> chair</h2>
+        <p class="card-address">
+          <i class="fa-solid fa-star" style="margin-right: 4px;"></i><%= @chair.rating %>
+          <i class="fa-solid fa-location-pin" style="margin-left: 20px; margin-right: 4px;"></i>   <%= @chair.address %>
+        </p>
+
+        <div class="card-trip new-class">
+          <%= cl_image_tag @chair.photo.key, width: 1200, crop: :scale %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= @chair.name %></h2>
+              <p><%= @chair.description %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%=@chair.price_per_day%> € / day</h2>
+            <%= cl_image_tag @chair.user.photo.key, width: 400, crop: :thumb, class: "card-trip-user avatar-bordered" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form">
+        <h2>Réserver</h2>
+          <%= simple_form_for [@chair, @booking] do |f| %>
+          <%= f.input :start_time, html5: true %>
+          <%= f.input :end_time, html5: true %>
+          <%= f.submit "Submit reservation", class: "btn btn-primary w-100" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+</div>
