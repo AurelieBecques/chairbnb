@@ -1,4 +1,11 @@
 class ChairsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+  def index
+    @chairs = Chair.all
+
+  def show
+    @chair = Chair.find(params[:id])
+    @booking = Booking.new
 
   def new
     @chair = Chair.new
