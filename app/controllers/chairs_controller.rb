@@ -1,4 +1,7 @@
 class ChairsController < ApplicationController
+  def show
+    @chair = Chair.find(params[:id])
+    @booking = Booking.new
 
   def new
     @chair = Chair.new
