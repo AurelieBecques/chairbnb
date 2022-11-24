@@ -94,7 +94,7 @@ Booking.create!(
   start_time: Time.now + 3.days,
   end_time: Time.now + 6.days,
   total_price: 90,
-  status: "pending",
+  status: "en attente",
   chair: chair_hip,
   user: corinne
 )
@@ -103,7 +103,7 @@ Booking.create!(
   start_time: Time.now - 7.days,
   end_time: Time.now - 4.days,
   total_price: 90,
-  status: "validate",
+  status: "validé",
   chair: chair_hip,
   user: rodolphe
 )
@@ -112,7 +112,7 @@ Booking.create!(
   start_time: Time.now - 1.days,
   end_time: Time.now,
   total_price: 30,
-  status: "denied",
+  status: "accepté",
   chair: chair_pool,
   user: matthieu
 )
@@ -122,7 +122,7 @@ Booking.create!(
   start_time: Time.now,
   end_time: Time.now + 2.days,
   total_price: 700,
-  status: "pending",
+  status: "en attente",
   chair: chair_rodolphe,
   user: matthieu
 )
@@ -132,7 +132,7 @@ Booking.create!(
   start_time: Time.now + 2.days,
   end_time: Time.now + 9.days,
   total_price: 1050,
-  status: "accepted",
+  status: "accepté",
   chair: chair_western,
   user: aurelie
 )
