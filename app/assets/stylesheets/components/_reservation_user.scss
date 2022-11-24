@@ -1,3 +1,4 @@
+
 .card-reservation {
   overflow: hidden;
   height: 120px;
@@ -5,8 +6,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 50%;
-  margin: 20px 0px 20px 20px;
+  // flex-grow: 1;
+  // width: 100%;
+  // margin: 20px 0px 20px 60px;
+  margin: 20px 60px;
 }
 
 .card-reservation img {
@@ -16,29 +19,37 @@
 }
 
 .card-reservation h2 {
-  font-size: 16px;
+  font-size: 28px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-reservation p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  display: flex;
 }
 
 .card-reservation .card-reservation-infos {
   padding: 16px;
-}
-
-.reservation {
-  list-style: none;
-  display: flex;
+  width: -webkit-fill-available;
 }
 
 .titre-reservation {
   font-weight: bold;
   margin: 20px 0px 20px 20px;
+  text-align: center;
+}
+
+.price {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.price_status {
+  display: flex;
+  justify-content: space-between;
 }

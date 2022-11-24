@@ -1,18 +1,23 @@
+<div class="container_reservation">
+  <h2 class="titre-reservation">Mes réservations :</h2>
 
-<h2 class="titre-reservation">Mes réservations :</h2>
-
- <% @bookings.each do |booking| %>
-<div class="card-reservation">
-  <img src="" />
-  <div class="card-reservation-infos">
-    <h2>  <li>Your Chairs : <%= booking.chair.name %></li></h2>
-    <p>
-      <div class="reservation">
-        Total Price : <%= booking.total_price %>$
-        Reservation confirm : <%= booking.status %><br>
-        Date reservation : <%= booking.start_time %> -- <%= booking.end_time %>
+  <% @bookings.each do |booking| %>
+    <div class="card-reservation">
+      <div class="p-0 h-100">
+        <%= cl_image_tag booking.chair.photo.key, crop: :fill, width: 300 %>
       </div>
-    </p>
-  </div>
-</div>
+      <div class="card-reservation-infos">
+        <div>
+          <h2><%= booking.chair.name.capitalize %></h2>
+        </div>
+        <div class="price_status">
+          <p class="price"><%= booking.total_price %>$</p>
+          <p><%= booking.status.capitalize%></p>
+        </div>
+        <div class="date-reservation">
+          <p><i class="fa-solid fa-calendar-days p-1"></i>  Date de réservation : <%= booking.start_time.strftime("%d/%m/%Y") %> - <%= booking.end_time.strftime("%d/%m/%Y") %></p>
+        </div>
+      </div>
+    </div>
   <% end %>
+</div>
