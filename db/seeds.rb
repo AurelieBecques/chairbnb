@@ -88,13 +88,12 @@ chair_western.save!
 # article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 # article.save
 
-
 # Les réservations des chaises d'Aurelie (hip et pool)
 Booking.create!(
   start_time: Time.now + 3.days,
   end_time: Time.now + 6.days,
   total_price: 90,
-  status: "en attente",
+  status: "pending",
   chair: chair_hip,
   user: corinne
 )
@@ -103,7 +102,7 @@ Booking.create!(
   start_time: Time.now - 7.days,
   end_time: Time.now - 4.days,
   total_price: 90,
-  status: "validé",
+  status: "validated",
   chair: chair_hip,
   user: rodolphe
 )
@@ -112,7 +111,7 @@ Booking.create!(
   start_time: Time.now - 1.days,
   end_time: Time.now,
   total_price: 30,
-  status: "accepté",
+  status: "validated",
   chair: chair_pool,
   user: matthieu
 )
@@ -122,7 +121,7 @@ Booking.create!(
   start_time: Time.now,
   end_time: Time.now + 2.days,
   total_price: 700,
-  status: "en attente",
+  status: "pending",
   chair: chair_rodolphe,
   user: matthieu
 )
@@ -132,7 +131,7 @@ Booking.create!(
   start_time: Time.now + 2.days,
   end_time: Time.now + 9.days,
   total_price: 1050,
-  status: "accepté",
+  status: "validated",
   chair: chair_western,
   user: aurelie
 )

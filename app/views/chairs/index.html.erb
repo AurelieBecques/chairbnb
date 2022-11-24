@@ -13,8 +13,8 @@
             <%= cl_image_tag(chair.photo.key) %>
             <div class="card-index-infos px-2 mt-2 ms-2">
               <div class="style-card">
-                <h2><%= chair.name %></h2>
-                <p><%= chair.description %></p>
+                <h2><%= chair.name.capitalize %></h2>
+                <p><%= chair.description.truncate(100) %></p>
               </div>
               <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
               <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>

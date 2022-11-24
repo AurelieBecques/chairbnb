@@ -1,5 +1,5 @@
 <div class="container_reservation">
-  <h2 class="titre-reservation">Mes réservations :</h2>
+  <h2 class="titre-reservation">Regarde tout ce que tu as déjà loué !</h2>
 
   <% @bookings.each do |booking| %>
     <div class="card-reservation">
@@ -9,13 +9,20 @@
       <div class="card-reservation-infos">
         <div>
           <h2><%= booking.chair.name.capitalize %></h2>
+          <div class="date-reservation">
+            <p><i class="fa-solid fa-calendar-days p-1"></i>  Date de réservation : <%= booking.start_time.strftime("%d/%m/%Y") %> - <%= booking.end_time.strftime("%d/%m/%Y") %></p>
+            <p class="price"><%= booking.total_price %> €</p>
+          </div>
         </div>
         <div class="price_status">
-          <p class="price"><%= booking.total_price %>$</p>
-          <p><%= booking.status.capitalize%></p>
-        </div>
-        <div class="date-reservation">
-          <p><i class="fa-solid fa-calendar-days p-1"></i>  Date de réservation : <%= booking.start_time.strftime("%d/%m/%Y") %> - <%= booking.end_time.strftime("%d/%m/%Y") %></p>
+          <% case booking.status %>
+          <% when "pending" %>
+            <p>En attente</p>
+          <% when "validated" %>
+            <p>Accepté</p>
+          <% when "denied" %>
+            <p>Refusé</p>
+          <% end %>
         </div>
       </div>
     </div>

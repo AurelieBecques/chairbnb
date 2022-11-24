@@ -1,30 +1,36 @@
-<div class="container text-center">
-  <h2>Regarde tout ce que tu as déjà loué !</h2>
-</div>
-<% @bookings.each do |booking| %>
-  <div class="container card-booked-chair">
-    <div class="row">
-      <div class=col card_image>
-        <%= cl_image_tag booking.chair.photo.key, crop: :fill, width: 300,id: "owner-avatar"%>
+<div class="container_reservation">
+  <h2 class="titre-reservation">Regarde tout ce que tu as déjà loué !</h2>
+
+  <% @bookings.each do |booking| %>
+    <div class="card-reservation">
+      <div class="p-0 h-100">
+        <%= cl_image_tag booking.chair.photo.key, crop: :fill, width: 300 %>
       </div>
-      <div class="col">
-        <p><%= link_to booking.chair.name, chair_path(booking.chair), class: "name" %></p>
+      <div class="card-reservation-infos">
         <div>
-          <p> Du: <%= booking.start_time %> au <%= booking.end_time %></p>
+          <h2><%= booking.chair.name.capitalize %></h2>
+          <div class="date-reservation">
+            <p><i class="fa-solid fa-calendar-days p-1"></i>  Date de réservation : <%= booking.start_time.strftime("%d/%m/%Y") %> - <%= booking.end_time.strftime("%d/%m/%Y") %></p>
+            <p class="price"><%= booking.total_price %> €</p>
+          </div>
         </div>
-        <div class="col">
-          <p> <%= booking.total_price %>€</p>
-          <p id="client"> Réservé par : <br> <%= booking.user.first_name%> <%= booking.user.last_name%></p>
+        <div class="price_status">
+          <% case booking.status %>
+          <% when "pending" %>
+            <p>En attente</p>
+          <% when "validated" %>
+            <p>Accepté</p>
+          <% when "denied" %>
+            <p>Refusé</p>
+          <% end %>
+          <% if booking.status == "pending" %>
+            <div class="d-flex justify-content-around">
+              <%= link_to "j'accepte", accept_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-success" %>
+              <%= link_to "je refuse", deny_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-danger" %>
+            </div>
+          <% end %>
         </div>
-        <div class="col">
-        <h5 class="<%= booking.status %> m-0"><%= booking.status %></h5>
-        <% if booking.status == "pending" %>
-      <div class="d-flex justify-content-around mt-3">
-        <%= link_to "j'accepte", accept_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-success" %>
-        <%= link_to "je refuse", deny_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-danger" %>
-      </div>
-        <% end %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

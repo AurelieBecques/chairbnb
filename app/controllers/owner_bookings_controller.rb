@@ -5,7 +5,7 @@ class OwnerBookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.status = "accepté"
+    @booking.status = "validated"
     @booking.save
 
     redirect_to owner_bookings_path(current_user)
@@ -13,7 +13,7 @@ class OwnerBookingsController < ApplicationController
 
   def deny
     @booking = Booking.find(params[:id])
-    @booking.status = "refusé"
+    @booking.status = "denied"
     @booking.save
 
     redirect_to owner_bookings_path(current_user)
