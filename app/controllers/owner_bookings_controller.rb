@@ -8,7 +8,7 @@ class OwnerBookingsController < ApplicationController
     @booking.status = "accepté"
     @booking.save
 
-    redirect_to owner_bookings(current_user)
+    redirect_to owner_bookings_path(current_user)
   end
 
   def deny
@@ -16,6 +16,6 @@ class OwnerBookingsController < ApplicationController
     @booking.status = "refusé"
     @booking.save
 
-    redirect_to owner_bookings(current_user)
+    redirect_to owner_bookings_path(current_user)
   end
 end
