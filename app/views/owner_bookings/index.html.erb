@@ -10,11 +10,11 @@
       <div class="col">
         <p><%= link_to booking.chair.name, chair_path(booking.chair), class: "name" %></p>
         <div>
-          <p> De: <%= booking.start_time %> à <%= booking.end_time %></p>
+          <p> Du: <%= booking.start_time %> à <%= booking.end_time %></p>
         </div>
         <div class="col">
           <p> <%= booking.total_price %>€</p>
-          <p id="client"> Réservé par : <br> <%= booking.user.first_name%><%= booking.user.last_name%></p>
+          <p id="client"> Réservé par : <br> <%= booking.user.first_name%> <%= booking.user.last_name%></p>
         </div>
         <div class="col">
         <h5 class="<%= booking.status %> m-0"><%= booking.status %></h5>
