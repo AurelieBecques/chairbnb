@@ -10,7 +10,7 @@
       <div class="col">
         <p><%= link_to booking.chair.name, chair_path(booking.chair), class: "name" %></p>
         <div>
-          <p> Du: <%= booking.start_time %> à <%= booking.end_time %></p>
+          <p> Du: <%= booking.start_time %> au <%= booking.end_time %></p>
         </div>
         <div class="col">
           <p> <%= booking.total_price %>€</p>
@@ -20,8 +20,8 @@
         <h5 class="<%= booking.status %> m-0"><%= booking.status %></h5>
         <% if booking.status == "pending" %>
       <div class="d-flex justify-content-around mt-3">
-        <%= link_to "accepté", accept_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-success" %>
-        <%= link_to "refusé", deny_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-danger" %>
+        <%= link_to "j'accepte", accept_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-success" %>
+        <%= link_to "je refuse", deny_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-danger" %>
       </div>
         <% end %>
       </div>
