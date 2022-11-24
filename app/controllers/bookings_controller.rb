@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
@@ -13,12 +13,12 @@ class BookingsController < ApplicationController
 
     if @booking.valid?
       @booking.total_price = @chair.price_per_day * (@booking.end_time - @booking.start_time).to_i
+
       @booking.save
       redirect_to bookings_path, notice: "You have booked this chair! Waiting for owner's approval..." # renvoi vers les résas du locataire
     else
       render "chairs/show", status: :unprocessable_entity
     end
-
   end
 
   private
