@@ -5,24 +5,23 @@
   </div>
 </div>
 
-<div class="row">
-  <ul class="col-6 d-flex flex-column">
-    <% @chairs.each do |chair| %>
-      <div class="card-trip my-4 rounded">
-        <%= cl_image_tag(chair.photo.key) %>
-        <div class="card-trip-infos">
-          <div class="style-card">
-            <h2><%= link_to "#{chair.name}", chair_path(chair)%></h2>
-            <p><%= chair.description %></p>
+<div class="cards col-6">
+    <%# <ul @class="d-flex flex-column my-4"> %>
+      <% @chairs.each do |chair| %>
+        <%= link_to chair_path(chair), class: "card-index-link" do %>
+          <div class="card-index">
+            <%= cl_image_tag(chair.photo.key) %>
+            <div class="card-index-infos px-2 mt-2 ms-2">
+              <div class="style-card">
+                <h2><%= chair.name %></h2>
+                <p><%= chair.description %></p>
+              </div>
+              <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
+              <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>
+            </div>
           </div>
-          <h2 class="card-trip-pricing"><%= chair.price_per_day %>€</h2>
-          <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-trip-user avatar-bordered") %>
-        </div>
-      </div>
-    <% end %>
-  </ul>
-
-  <div class="col-6 my-4">
-    <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=48.11178&lon=-1.68026&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" alt="">
-  </div>
+        <% end %>
+      <% end %>
+      <%# </ul> %>
+    </div>
 </div>
