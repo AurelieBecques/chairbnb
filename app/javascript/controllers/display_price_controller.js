@@ -9,9 +9,7 @@ export default class extends Controller {
     const endDate = new Date(this.endDateTarget.value)
     const startDate = new Date(this.startDateTarget.value)
     const diff = endDate - startDate
-    console.log(startDate)
-    console.log(this.chairPriceValue)
-    console.log(Date.now())
+
     if (this.startDateTarget.value==="" || this.endDateTarget.value==="" || diff <= 0 ) return this.#bookingError()
 
     const diffDays = diff / 1000 / 60 / 60 / 24
