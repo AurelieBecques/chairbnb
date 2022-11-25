@@ -1,10 +1,18 @@
-<h1>New chair</h1>
+<div class="chair" >
+  <div class="left">
+    <h1>Ma nouvelle chaise</h1>
+    <%= simple_form_for [@chair] do |f| %>
+      <%= f.input :name, label: "Nom de ma chaise" %>
+      <%= f.input :description %>
+      <%= f.input :address, label: "Adresse" %>
+      <%= f.input :price_per_day, label: "Prix par jour" %>
+      <%= f.input :photo, as: :file, label: "Photo de ma chaise" %>
+      <%= f.submit "J'ajoute ma chaise", class: "btn btn-chair" %>
+    <% end %>
+  </div>
 
-<%= simple_form_for [@chair] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :price_per_day %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+  <div class=right>
+    <%= image_tag "fauteuil_blanc.jpg", width: "100%" %>
+  </div>
+
+</div>
