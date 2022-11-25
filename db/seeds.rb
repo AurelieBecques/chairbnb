@@ -108,7 +108,7 @@ chair_lawrenceville = Chair.new(name: "Lawrenceville",
 chair_lawrenceville.photo.attach(io: file, filename: "lawrenville.jpg", content_type: "image/jpg")
 chair_lawrenceville.save!
 
-file = File.open("db/fixtures/images/chairs/lawrenceville.jpg")
+file = File.open("db/fixtures/images/chairs/rodin.jpg")
 chair_rodin = Chair.new(name: "Rodin",
                   user: rodolphe,
                   description: "La Chaise Rodin est de style nordique, une tendance à la hausse ces dernières années. Son design est minimaliste et de forme souple,
@@ -161,7 +161,7 @@ chair_white_curl = Chair.new(name: "White Curl",
 chair_white_curl.photo.attach(io: file, filename: "white_curl.jpg", content_type: "image/jpg")
 chair_white_curl.save!
 
-file = File.open("db/fixtures/images/chairs/edison.jpg")
+file = File.open("db/fixtures/images/chairs/playa.jpg")
 chair_playa = Chair.new(name: "Playa",
                   user: matthieu,
                   description: "Le Fauteuil en Velours Penta d'inspiration rétro et vintage est très confortable grâce à sa forme qui s'adaptera parfaitement à votre dos.
@@ -175,7 +175,7 @@ chair_playa = Chair.new(name: "Playa",
 chair_playa.photo.attach(io: file, filename: "playa.jpg", content_type: "image/jpg")
 chair_playa.save!
 
-file = File.open("db/fixtures/images/chairs/edison.jpg")
+file = File.open("db/fixtures/images/chairs/sea_view.jpg")
 chair_sea_view = Chair.new(name: "Sea View",
                   user: matthieu,
                   description: "La Chaise d'extérieur en Polypropylène peinte à la main de façon hétérogène en couleur bleue, peut
