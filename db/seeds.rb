@@ -183,7 +183,7 @@ chair_sea_view = Chair.new(name: "Sea View",
                   Fabriquée en polypropylène. Le polypropylène est travaillé avec un moule, il peut présenter de petites imperfections dans celui-ci, mais
                   cela n'altère pas sa qualité. Utilisation intérieur et extérieur",
                   address: "8 rue de Marseille, 33000 Bordeaux",
-                  rating: 1,
+                  rating: 5,
                   price_per_day: 10)
 chair_sea_view.photo.attach(io: file, filename: "sea_view.jpg", content_type: "image/jpg")
 chair_sea_view.save!
