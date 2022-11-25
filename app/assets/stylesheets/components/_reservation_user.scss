@@ -6,10 +6,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  // flex-grow: 1;
-  // width: 100%;
-  // margin: 20px 0px 20px 60px;
-  margin: 20px 60px;
+  margin: 30px 75px;
 }
 
 .card-reservation img {
@@ -21,7 +18,7 @@
 .card-reservation h2 {
   font-size: 28px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 8px;
 }
 
 .card-reservation p {
@@ -29,7 +26,6 @@
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
   display: flex;
 }
 
@@ -50,6 +46,7 @@
 .price {
   font-size: 23px;
   font-weight: bold;
+  margin-left: 15px;
 }
 
 .price_status {

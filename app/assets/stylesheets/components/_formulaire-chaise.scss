@@ -1,0 +1,24 @@
+.chair {
+  display: flex;
+  margin: 0 auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  background-color: rgb(230, 230, 230);
+  gap: 64px;
+}
+
+.chair .left {
+  width: 50%;
+  background:rgb(220, 220, 220);
+  border-radius: 10px;
+}
+
+.chair .right {
+  width: 50%;
+  background: rgb(220, 220, 220);
+  border-radius: 10px;
+}
+.right img {
+  border-radius: 10px;
+}

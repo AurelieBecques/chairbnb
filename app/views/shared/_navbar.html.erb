@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+       <div class="chairbnb">ChairBnB.com</div>
     <% end %>
-  <div class="chairbnb">ChairBnB</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,14 +15,14 @@
             <%= link_to "Toutes les chaises", chairs_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "+ Ajouter une chaise", new_chair_path, class: "nav-link" %>
+            <%= link_to "Ajouter une chaise", new_chair_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, crop: :thumb, height: 40, width: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
-              <%= link_to "Les réservations que j'ai sur mes chaises à moi", owner_bookings_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Mes chaises en location", owner_bookings_path, class: "dropdown-item" %>
+              <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
         <% else %>

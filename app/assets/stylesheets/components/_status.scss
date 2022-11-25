@@ -1,13 +1,44 @@
-.accepted{
-  background-color: rgb(6,177,75);
-  color:white;
+.button_accept{
+  text-decoration: none;
+  border:2px solid green;
+  border-radius: 5px;
+  color: green;
+  margin-right: 9px;
+  padding: 9px 24px;
+  transition-duration: 0.4s;
 }
 
-.deny{
-
-  color:black;
+.button_accept:hover {
+  background-color: green;
+  color: white;
 }
 
-.refused{
-background-color: red;
+.button_refused{
+  text-decoration: none;
+  color: red;
+  border:2px solid red;
+  border-radius: 5px;
+  padding: 9px 24px;
+  transition-duration: 0.4s;
+}
+
+.button_refused:hover {
+  background-color: red;
+  color: white;
+}
+
+.validated {
+  color: green;
+  margin-right: 25px;
+
+}
+
+.denied {
+  color: red;
+  margin-right: 25px;
+}
+
+.pending {
+  margin-right: 11px;
+  opacity: 0.50;
 }

@@ -1,5 +1,5 @@
 <div class="container_reservation">
-  <h2 class="titre-reservation">Regarde tout ce que tu as déjà loué !</h2>
+  <h2 class="titre-reservation">Mes réservations :</h2>
 
   <% @bookings.each do |booking| %>
     <div class="card-reservation">
@@ -17,11 +17,11 @@
         <div class="price_status">
           <% case booking.status %>
           <% when "pending" %>
-            <p>En attente</p>
+           <p><div class="pending">En attente </div></p>
           <% when "validated" %>
-            <p>Accepté</p>
+            <p><div class="validated">Accepté<div></p>
           <% when "denied" %>
-            <p>Refusé</p>
+            <p> <div class="denied">Refusé</div></p>
           <% end %>
         </div>
       </div>
