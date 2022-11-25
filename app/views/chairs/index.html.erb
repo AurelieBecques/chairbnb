@@ -5,23 +5,30 @@
   </div>
 </div>
 
-<div class="cards col-6">
-    <%# <ul @class="d-flex flex-column my-4"> %>
-      <% @chairs.each do |chair| %>
-        <%= link_to chair_path(chair), class: "card-index-link" do %>
-          <div class="card-index">
-            <%= cl_image_tag(chair.photo.key) %>
-            <div class="card-index-infos px-2 mt-2 ms-2">
-              <div class="style-card">
-                <h2><%= chair.name.capitalize %></h2>
-                <p><%= chair.description.truncate(100) %></p>
-              </div>
-              <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
-              <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>
+<div class="flexbox ms-4 me-4">
+  <div class="cards col-6">
+    <% @chairs.each do |chair| %>
+      <%= link_to chair_path(chair), class: "card-index-link" do %>
+        <div class="card-index">
+          <%= cl_image_tag(chair.photo.key) %>
+          <div class="card-index-infos px-2 mt-2 ms-2">
+            <div class="style-card">
+              <h2><%= chair.name.capitalize %></h2>
+              <p><%= chair.description.truncate(100) %></p>
             </div>
+            <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
+            <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>
           </div>
-        <% end %>
+        </div>
       <% end %>
-      <%# </ul> %>
+    <% end %>
+  </div>
+
+  <div class="map col-6">
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 </div>
