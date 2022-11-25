@@ -13,14 +13,14 @@
           <%= cl_image_tag @chair.photo.key %>
         <%# </div> %>
 
-        <div class="card-trip new-class">
+        <div class="card-trip">
           <%= cl_image_tag @chair.photo.key, width: 1200, crop: :scale %>
           <div class="card-trip-infos">
             <div>
-              <h2><%= @chair.name %></h2>
+              <h2><%= @chair.name.upcase %></h2>
               <p><%= @chair.description %></p>
             </div>
-            <h2 class="card-trip-pricing"><span id="price_per_day"><%=@chair.price_per_day%></span> € / day</h2>
+            <h2 class="card-trip-pricing"><span id="price_per_day"><%=@chair.price_per_day%></span> € / jour</h2>
             <%= cl_image_tag @chair.user.photo.key, width: 400, crop: :thumb, class: "card-trip-user avatar-bordered" %>
           </div>
         </div>
@@ -35,7 +35,7 @@
               <%= f.input :end_time, as: :date, html5: true, label: "Fin de réservation", input_html: {min: Date.today, data: {action: "change->display-price#compute", display_price_target: "endDate"}}%>
               <p class="d-none" data-display-price-target="priceContainer">PRIX TOTAL: <span data-display-price-target="totalPrice">0 €</span></p>
               <div class="d-flex justify-content-center">
-                <%= f.button :submit, "Réserver", disabled: true, class: "btn btn-outline-secondary", data: { display_price_target: "button" }%>
+                <%= f.button :submit, "Réserver", disabled: true, class: "btn btn-chair", data: { display_price_target: "button" }%>
               </div>
             <% end %>
         </div>

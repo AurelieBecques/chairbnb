@@ -6,6 +6,7 @@ export default class extends Controller {
     apiKey: String,
     markers: Array
   }
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
@@ -13,20 +14,9 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl }))
-    this.geocoder.on("result", event => this.#setInputValue(event))
-    this.geocoder.on("clear", () => this.#clearInputValue())
-  }
-
-  #setInputValue(event) {
-    this.addressTarget.value = event.result["place_name"]
-  }
-
-  #clearInputValue() {
-    this.addressTarget.value = ""
   }
 
   #addMarkersToMap() {
@@ -49,6 +39,7 @@ export default class extends Controller {
         .addTo(this.map)
     })
   }
+
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))

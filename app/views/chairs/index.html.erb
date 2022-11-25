@@ -1,7 +1,7 @@
 <div class="index-title" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1554752191-b9e763720f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2946&q=80);">
   <div class="container">
     <h1 style="color: white;">Les chaises disponibles</h1>
-    <p style="color: grey; text-align: center">Chaise longue, Rockingchair, chaise de camping... Louez votre chaise de rêve près de chez vous !</p>
+    <p style="color: white; text-align: center">Chaise longue, Rockingchair, chaise de camping... Louez votre chaise de rêve près de chez vous !</p>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
           <%= cl_image_tag(chair.photo.key) %>
           <div class="card-index-infos px-2 mt-2 ms-2">
             <div class="style-card">
-              <h2><%= chair.name.capitalize %></h2>
+              <h2><%= chair.name.upcase %></h2>
               <% chair.rating.floor.times do %>
                 <i class="fa-solid fa-star text-yellow"></i>
               <% end %>
@@ -29,7 +29,7 @@
                 <% end %>
               <p><%= chair.description.truncate(100) %></p>
             </div>
-            <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
+            <h2 class="card-index-pricing"><%= chair.price_per_day %> € / jour</h2>
             <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>
           </div>
         </div>
