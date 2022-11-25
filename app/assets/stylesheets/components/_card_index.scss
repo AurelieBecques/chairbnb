@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   justify-items: stretch;
+  margin-right: 12px;
 }
 
 .card-index-link {
@@ -55,10 +56,15 @@
 .card-index-infos .card-index-user {
   position: absolute;
   right: 16px;
-  top: -20px;
+  top: -27px;
   width: 40px;
 }
 
 .card-index-pricing {
   align-self: flex-end;
+}
+.map {
+  margin-left: 12px;
+  position: sticky;
+  top: 24px;
 }

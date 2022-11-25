@@ -76,7 +76,7 @@ chair_black = Chair.new(name: "Black",
                   Chaise de salle à manger très confortable. Pieds et assise en polypropylène. Idéale pour ajouter une touche unique à votre salon ou salle à manger à la maison. 
                   Le dossier et l'assise forment une seule pièce de polypropylène. Comprend un coussin, selon la couleur, le coussin est en similicuir ou en tissu. Coussin non amovible. Convient pour une utilisation en intérieur..",
                   address: "Pool du Mabilais, 2 rue du Mabilais, 35000 Rennes",
-                  rating: 2,
+                  rating: 3.7,
                   price_per_day: 60)
 chair_black.photo.attach(io: file, filename: "black.jpg", content_type: "image/jpg")
 chair_black.save!

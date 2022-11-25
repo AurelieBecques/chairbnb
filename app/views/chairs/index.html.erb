@@ -5,23 +5,43 @@
   </div>
 </div>
 
-<div class="cards col-6">
-    <%# <ul @class="d-flex flex-column my-4"> %>
-      <% @chairs.each do |chair| %>
-        <%= link_to chair_path(chair), class: "card-index-link" do %>
-          <div class="card-index">
-            <%= cl_image_tag(chair.photo.key) %>
-            <div class="card-index-infos px-2 mt-2 ms-2">
-              <div class="style-card">
-                <h2><%= chair.name.capitalize %></h2>
-                <p><%= chair.description.truncate(100) %></p>
-              </div>
-              <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
-              <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>
+<div class="flexbox px-4">
+  <div class="cards col-6 mr-2">
+    <% @chairs.each do |chair| %>
+      <%= link_to chair_path(chair), class: "card-index-link" do %>
+        <div class="card-index">
+          <%= cl_image_tag(chair.photo.key) %>
+          <div class="card-index-infos px-2 mt-2 ms-2">
+            <div class="style-card">
+              <h2><%= chair.name.capitalize %></h2>
+              <% chair.rating.floor.times do %>
+                <i class="fa-solid fa-star text-yellow"></i>
+              <% end %>
+              <% if chair.rating < 5 %>
+              <% if (chair.rating * 2.0).round / 2.0 - chair.rating.floor == 0%>
+                <i class="fa-regular fa-star text-yellow"></i>
+              <% else %>
+                <i class="fa-solid fa-star-half-stroke text-yellow"></i>
+                <% end %>
+                <% (5 - chair.rating.floor - 1).times do %>
+                <i class="fa-regular fa-star text-yellow"></i>
+                <% end %>
+                <% end %>
+              <p><%= chair.description.truncate(100) %></p>
             </div>
+            <h2 class="card-index-pricing"><%= chair.price_per_day %>€/jour</h2>
+            <%= cl_image_tag(chair.user.photo.key,  width: 40, height: 40, crop: :fill, class:"card-index-user avatar-bordered") %>
           </div>
-        <% end %>
+        </div>
       <% end %>
-      <%# </ul> %>
+    <% end %>
+  </div>
+
+  <div class="map col-6 ml-2">
+    <div style="width: calc(100% - 24px); height: calc(100vh - 48px); border-radius: 5px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 </div>
