@@ -17,16 +17,16 @@
         <div class="price_status">
           <% case booking.status %>
           <% when "pending" %>
-            <p>En attente</p>
+            <p><div class="pending">En attente  <i class="fa-solid fa-spinner"></i></div></p>
           <% when "validated" %>
-            <p>Accepté</p>
+            <p><div class="validated">Accepté</div></p>
           <% when "denied" %>
-            <p>Refusé</p>
+            <p><div class="denied">Refusé</div></p>
           <% end %>
           <% if booking.status == "pending" %>
             <div class="d-flex justify-content-around">
-              <%= link_to "j'accepte", accept_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-success" %>
-              <%= link_to "je refuse", deny_owner_booking_path(booking), data: {turbo_method: :patch}, class:"link-danger" %>
+              <%= link_to "J'accepte", accept_owner_booking_path(booking), data: {turbo_method: :patch}, class:"button_accept" %></div>
+              <%= link_to "Je refuse", deny_owner_booking_path(booking), data: {turbo_method: :patch}, class:"button_refused" %></div>
             </div>
           <% end %>
         </div>
